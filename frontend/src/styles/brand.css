@@ -1,0 +1,154 @@
+/* ==========================================================================
+   SKILLORA BRAND & COMPONENT UTILITIES
+   ========================================================================== */
+
+/* Brand Gradients */
+.gradient-brand-text {
+  background: linear-gradient(135deg, var(--brand-blue-500) 0%, var(--brand-cyan-500) 50%, var(--brand-mint-400) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-brand-bg {
+  background: linear-gradient(135deg, var(--brand-blue-600) 0%, var(--brand-cyan-500) 60%, var(--brand-mint-400) 100%);
+}
+
+.gradient-card-border {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.gradient-card-border:hover {
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Brand Badges */
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.brand-badge-mint {
+  background: rgba(23, 205, 144, 0.1);
+  color: var(--brand-mint-400);
+  border-color: rgba(23, 205, 144, 0.25);
+}
+
+/* Secondary Brand Pill (Organized by GNANEX) */
+.gnanex-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.gnanex-pill:hover {
+  border-color: var(--gnanex-blue);
+  color: var(--text-primary);
+}
+
+/* Brand Buttons */
+.btn-brand-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--brand-blue-600) 0%, var(--brand-blue-500) 100%);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(20, 92, 223, 0.35);
+  transition: all var(--duration-normal) var(--ease-smooth);
+  text-decoration: none;
+}
+
+.btn-brand-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(20, 92, 223, 0.45);
+  background: linear-gradient(135deg, var(--brand-blue-700) 0%, var(--brand-blue-600) 100%);
+}
+
+.btn-brand-primary:active {
+  transform: translateY(0);
+}
+
+.btn-brand-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  text-decoration: none;
+}
+
+.btn-brand-secondary:hover {
+  background: var(--bg-subtle);
+  border-color: var(--border-strong);
+  color: var(--primary-accent);
+}
+
+/* Tagline Display */
+.brand-tagline-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.brand-tagline-step {
+  position: relative;
+  transition: color var(--duration-normal);
+}
+
+.brand-tagline-step:hover {
+  color: var(--brand-mint-400);
+}
+
+.brand-tagline-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brand-cyan-500);
+}

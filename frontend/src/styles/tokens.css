@@ -1,0 +1,155 @@
+/* ==========================================================================
+   SKILLORA DESIGN TOKENS & COLOR SYSTEM
+   Centralized Design System for Light & Dark Themes
+   ========================================================================== */
+
+:root {
+  /* Core Brand Spectrum */
+  --brand-navy-900: #060e1d;
+  --brand-navy-800: #0d2547; /* Primary Wordmark Navy */
+  --brand-navy-700: #12345e;
+  
+  --brand-blue-700: #0f48b5;
+  --brand-blue-600: #145cdf; /* Primary Electric Blue Accent */
+  --brand-blue-500: #147fdf; /* Luminous Vibrant Blue */
+  --brand-blue-400: #38bdf8;
+  
+  --brand-cyan-500: #0eafd8; /* Progress & Forward Movement Cyan */
+  --brand-cyan-400: #22d3ee;
+  
+  --brand-mint-600: #0d9668;
+  --brand-mint-500: #10b981; /* Achievement Green */
+  --brand-mint-400: #17cd90; /* Skill Growth & Dot on 'i' */
+  --brand-mint-300: #34d399;
+  
+  /* GNANEX Organization Colors */
+  --gnanex-blue: #007cff;
+  --gnanex-blue-dark: #0066d6;
+  --gnanex-blue-glow: rgba(0, 124, 255, 0.4);
+
+  /* Typography Stacks */
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+
+  /* Elevation & Curves */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Smooth Animation Curves */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Z-Index Hierarchy */
+  --z-base: 1;
+  --z-card: 10;
+  --z-header: 100;
+  --z-modal: 500;
+  --z-intro: 9999;
+}
+
+/* ==========================================================================
+   LIGHT THEME DESIGN TOKENS
+   - Clean light background
+   - Strong readable text
+   - Subtle borders
+   - Soft cards
+   - Controlled accent usage
+   ========================================================================== */
+[data-theme='light'] {
+  --bg-canvas: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-surface-glass: rgba(255, 255, 255, 0.85);
+  --bg-subtle: #f1f5f9;
+  --bg-card: #ffffff;
+  
+  --text-primary: #0d2547;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-subtle: #94a3b8;
+  --text-inverse: #ffffff;
+  
+  --border-subtle: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #145cdf;
+  
+  --primary-accent: #145cdf;
+  --primary-accent-hover: #0f48b5;
+  --primary-accent-subtle: rgba(20, 92, 223, 0.08);
+  --accent-cyan: #0eafd8;
+  --accent-mint: #10b981;
+  
+  --gnanex-text: #0f172a;
+  --gnanex-brackets: #0070f3;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.07);
+  --shadow-lg: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --shadow-glow: 0 0 32px rgba(20, 92, 223, 0.12);
+  --shadow-mint-glow: 0 0 24px rgba(23, 205, 144, 0.15);
+
+  --badge-bg: rgba(20, 92, 223, 0.07);
+  --badge-text: #145cdf;
+  --badge-border: rgba(20, 92, 223, 0.2);
+
+  --toggle-bg: #e2e8f0;
+  --toggle-thumb: #ffffff;
+}
+
+/* ==========================================================================
+   DARK THEME DESIGN TOKENS
+   - Deep dark background
+   - Elevated cards
+   - Readable light text
+   - Subtle borders
+   - Controlled accent glow
+   ========================================================================== */
+[data-theme='dark'] {
+  --bg-canvas: #070b14;
+  --bg-surface: #0e1626;
+  --bg-surface-elevated: #152238;
+  --bg-surface-glass: rgba(14, 22, 38, 0.82);
+  --bg-subtle: #131d31;
+  --bg-card: #0e1626;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-subtle: #475569;
+  --text-inverse: #070b14;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-focus: #38bdf8;
+  
+  --primary-accent: #38bdf8;
+  --primary-accent-hover: #0eafd8;
+  --primary-accent-subtle: rgba(56, 189, 248, 0.12);
+  --accent-cyan: #22d3ee;
+  --accent-mint: #17cd90;
+
+  --gnanex-text: #ffffff;
+  --gnanex-brackets: #0084ff;
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 36px rgba(20, 127, 223, 0.25);
+  --shadow-mint-glow: 0 0 28px rgba(23, 205, 144, 0.22);
+
+  --badge-bg: rgba(56, 189, 248, 0.1);
+  --badge-text: #7dd3fc;
+  --badge-border: rgba(56, 189, 248, 0.25);
+
+  --toggle-bg: #1e293b;
+  --toggle-thumb: #38bdf8;
+}

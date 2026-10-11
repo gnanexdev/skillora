@@ -1,0 +1,47 @@
+.weekly-review-content { max-width: 1120px; }
+.weekly-review-heading { align-items: center; }
+.weekly-review-date { margin-bottom: 17px; }
+.weekly-review-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.weekly-review-summary > div { min-width: 0; padding: 14px 15px; border: 1px solid var(--border-subtle); border-radius: 6px; background: var(--bg-surface); }
+.weekly-review-summary > div > span { display: block; color: var(--text-muted); font-size: 11px; }
+.weekly-review-summary strong { display: flex; align-items: center; gap: 7px; margin-top: 8px; color: var(--text-primary); font-family: var(--display-font); font-size: 21px; font-weight: 730; }
+.weekly-review-summary strong svg { color: var(--primary-accent); }
+.weekly-review-data-note { margin: 12px 0 28px; color: var(--text-muted); font-size: 11px; line-height: 1.55; }
+.weekly-review-layout { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(230px, 0.85fr); align-items: start; gap: 28px; }
+.weekly-reflection { min-width: 0; }
+.weekly-review-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 17px; }
+.weekly-review-section-heading .eyebrow, .weekly-preparation .eyebrow { margin: 0 0 5px; }
+.weekly-review-section-heading h2, .weekly-preparation h2 { margin: 0; color: var(--text-primary); font-family: var(--display-font); font-size: 19px; font-weight: 730; line-height: 1.35; }
+.weekly-review-edited { color: var(--text-muted); font-size: 10px; }
+.weekly-reflection-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px 13px; }
+.weekly-reflection-field { display: grid; min-width: 0; gap: 7px; }
+.weekly-reflection-field:last-child { grid-column: 1 / -1; }
+.weekly-reflection-field > span { color: var(--text-secondary); font-size: 12px; font-weight: 650; }
+.weekly-reflection-field small { color: var(--text-muted); font-size: 10px; font-weight: 400; }
+.weekly-reflection-field textarea { width: 100%; min-height: 104px; resize: vertical; padding: 10px 11px; color: var(--text-primary); border: 1px solid var(--border-strong); border-radius: 5px; background: var(--bg-surface); font: inherit; font-size: 12px; line-height: 1.5; }
+.weekly-reflection-field:last-child textarea { min-height: 76px; }
+.weekly-reflection-field textarea:focus-visible { outline: 2px solid var(--primary-accent); outline-offset: 2px; }
+.weekly-reflection-actions { display: flex; min-height: 50px; align-items: center; justify-content: flex-end; gap: 14px; margin-top: 14px; }
+.weekly-reflection-actions > span { display: inline-flex; align-items: center; gap: 6px; margin-right: auto; color: #16805e; font-size: 11px; }
+.weekly-reflection-actions .button { min-height: 39px; font-size: 12px; }
+.weekly-preparation { align-self: stretch; padding: 18px 0 0 20px; border-top: 1px solid var(--border-subtle); border-left: 1px solid var(--border-subtle); }
+.weekly-preparation h2 { font-size: 17px; }
+.weekly-preparation ul { display: grid; gap: 12px; margin: 14px 0 18px; padding-left: 18px; color: var(--text-secondary); font-size: 12px; line-height: 1.55; }
+.weekly-preparation li::marker { color: var(--primary-accent); }
+.weekly-preparation-link { min-height: 38px; padding-inline: 11px; font-size: 11px; }
+
+@media (max-width: 760px) {
+  .weekly-review-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .weekly-preparation { padding: 18px 0 0; border-left: 0; }
+}
+
+@media (max-width: 560px) {
+  .weekly-review-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .weekly-review-heading { align-items: flex-start; }
+  .weekly-review-heading .week-navigation { width: auto; }
+  .weekly-review-section-heading { align-items: flex-start; flex-direction: column; }
+  .weekly-reflection-fields { grid-template-columns: minmax(0, 1fr); }
+  .weekly-reflection-field:last-child { grid-column: auto; }
+  .weekly-review-date { align-items: flex-start; }
+  .weekly-review-date .week-start-hint { flex-basis: 100%; margin-left: 24px; }
+}

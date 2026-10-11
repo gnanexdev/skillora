@@ -1,0 +1,198 @@
+.brand-particle-intro {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #f8fafc;
+  background: #060b14;
+  transition: opacity 280ms ease, visibility 280ms ease;
+}
+
+.brand-particle-intro.is-leaving {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brand-particle-intro__grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.24) 0.5px, transparent 0.7px);
+  background-size: 5px 5px;
+  mask-image: linear-gradient(90deg, transparent 5%, #000 50%, transparent 95%);
+  opacity: 0.11;
+}
+
+.brand-particle-intro__stage {
+  position: relative;
+  display: grid;
+  width: min(100vw, 720px);
+  height: 250px;
+  place-items: center;
+}
+
+.brand-particle-intro__gnanex,
+.brand-particle-intro__skillora {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: opacity 620ms ease, transform 620ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.brand-particle-intro__gnanex {
+  transform: translateY(4px);
+}
+
+.brand-particle-intro__gnanex.is-departing {
+  opacity: 0;
+  transform: translateY(-18px) scale(0.97);
+}
+
+.particle-logo {
+  position: relative;
+  width: min(82vw, 440px);
+  height: 178px;
+}
+
+.particle-logo__canvas,
+.particle-logo__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.particle-logo__canvas {
+  pointer-events: none;
+}
+
+.particle-logo__image {
+  height: auto;
+  top: 43%;
+  left: 50%;
+  width: 82%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  filter: drop-shadow(0 0 16px rgba(0, 124, 255, 0.28));
+  transition: opacity 420ms ease;
+}
+
+.particle-logo.is-settled .particle-logo__image,
+.particle-logo.has-fallback .particle-logo__image {
+  opacity: 1;
+}
+
+.particle-logo.is-settled .particle-logo__canvas {
+  opacity: 0.32;
+}
+
+.brand-particle-intro__credit {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin: 0;
+  color: rgba(226, 232, 240, 0.68);
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(7px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.brand-particle-intro__credit.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.brand-particle-intro__credit strong {
+  color: #f8fafc;
+  font-weight: 650;
+}
+
+.brand-particle-intro__skillora {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  pointer-events: none;
+}
+
+.brand-particle-intro__skillora.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 80ms;
+}
+
+.brand-particle-intro__tagline {
+  margin: 18px 0 0;
+  color: #b7c6d8;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.brand-particle-intro__tagline.is-visible {
+  animation: intro-tagline-enter 420ms ease 340ms both;
+}
+
+@keyframes intro-tagline-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.brand-particle-intro__skip {
+  position: absolute;
+  right: 26px;
+  bottom: 24px;
+  padding: 9px 12px;
+  color: #cbd5e1;
+  font: inherit;
+  font-size: 12px;
+  background: transparent;
+  border: 1px solid rgba(203, 213, 225, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.brand-particle-intro__skip:hover {
+  color: white;
+  border-color: rgba(203, 213, 225, 0.55);
+}
+
+.brand-particle-intro button:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .brand-particle-intro__stage {
+    height: 220px;
+  }
+
+  .particle-logo {
+    width: 86vw;
+    height: 150px;
+  }
+
+  .brand-particle-intro__skip {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-particle-intro *,
+  .brand-particle-intro *::before,
+  .brand-particle-intro *::after {
+    transition-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+}

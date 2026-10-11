@@ -1,0 +1,255 @@
+/* ==========================================================================
+   GNANEX -> SKILLORA BRAND INTRO ANIMATION
+   Premium Brand Introduction Sequence (~2.8s)
+   ========================================================================== */
+
+.brand-intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-intro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-canvas);
+  overflow: hidden;
+  user-select: none;
+  transition: opacity 0.5s var(--ease-smooth);
+}
+
+.brand-intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Subtle Ambient Glow in background */
+.brand-intro-ambient {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+  opacity: 0.18;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: background 0.8s var(--ease-smooth), opacity 0.8s var(--ease-smooth);
+}
+
+[data-theme='dark'] .brand-intro-ambient.gnanex-glow {
+  background: radial-gradient(circle, var(--gnanex-blue) 0%, transparent 70%);
+  opacity: 0.28;
+}
+
+[data-theme='dark'] .brand-intro-ambient.skillora-glow {
+  background: radial-gradient(circle, var(--brand-blue-500) 0%, var(--brand-mint-400) 70%, transparent 100%);
+  opacity: 0.32;
+}
+
+[data-theme='light'] .brand-intro-ambient.gnanex-glow {
+  background: radial-gradient(circle, var(--gnanex-blue) 0%, transparent 70%);
+  opacity: 0.15;
+}
+
+[data-theme='light'] .brand-intro-ambient.skillora-glow {
+  background: radial-gradient(circle, var(--brand-blue-600) 0%, var(--brand-cyan-500) 70%, transparent 100%);
+  opacity: 0.15;
+}
+
+/* Container for the centered animation stages */
+.brand-intro-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 640px;
+  padding: 0 24px;
+  min-height: 280px;
+}
+
+/* -------------------------------------------------------------
+   STAGE 1 & 2: GNANEX BRANDING
+   ------------------------------------------------------------- */
+.intro-gnanex-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  transition: all 0.6s var(--ease-smooth);
+}
+
+/* Phase 1: GNANEX Intro (smooth fade & subtle scale) */
+.intro-gnanex-section.phase-enter {
+  animation: gnanexIntroEnter 0.75s var(--ease-out-expo) forwards;
+}
+
+/* Phase 2: GNANEX Stable */
+.intro-gnanex-section.phase-stable {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Phase 3: GNANEX Transition (reduces emphasis & gently moves up) */
+.intro-gnanex-section.phase-exit {
+  animation: gnanexIntroExit 0.6s var(--ease-smooth) forwards;
+}
+
+@keyframes gnanexIntroEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes gnanexIntroExit {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.94);
+    visibility: hidden;
+  }
+}
+
+.intro-gnanex-badge {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0;
+  animation: gnanexSubtitleFade 0.6s var(--ease-smooth) 0.25s forwards;
+}
+
+@keyframes gnanexSubtitleFade {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------------------------------
+   STAGE 3 & 4: SKILLORA IDENTITY
+   ------------------------------------------------------------- */
+.intro-skillora-section {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-skillora-section.phase-enter {
+  opacity: 1;
+  pointer-events: auto;
+  animation: skilloraIntroEnter 0.75s var(--ease-out-expo) forwards;
+}
+
+@keyframes skilloraIntroEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.intro-skillora-tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  opacity: 0;
+  animation: skilloraTaglineEnter 0.5s var(--ease-smooth) 0.35s forwards;
+}
+
+@keyframes skilloraTaglineEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tagline-word {
+  display: inline-block;
+  transition: color var(--duration-fast);
+}
+
+.tagline-bullet {
+  color: var(--brand-cyan-500);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Skip intro button */
+.intro-skip-btn {
+  position: absolute;
+  bottom: 28px;
+  right: 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-smooth);
+  opacity: 0.75;
+}
+
+.intro-skip-btn:hover {
+  opacity: 1;
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: var(--bg-surface-elevated);
+}
+
+/* -------------------------------------------------------------
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .brand-intro-overlay {
+    transition: opacity 0.2s ease !important;
+  }
+  
+  .intro-gnanex-section,
+  .intro-skillora-section,
+  .intro-gnanex-badge,
+  .intro-skillora-tagline {
+    animation: none !important;
+    transition: opacity 0.2s ease !important;
+  }
+}
